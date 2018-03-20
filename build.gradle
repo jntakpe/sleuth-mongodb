@@ -46,6 +46,7 @@ ext {
     springCloudVersion = 'Finchley.M8'
 }
 
+//If you remove this line it will work fine
 ext['spring-cloud-sleuth.version'] = '2.0.0.BUILD-SNAPSHOT'
 
 dependencies {
@@ -54,17 +55,10 @@ dependencies {
     compile('com.fasterxml.jackson.module:jackson-module-kotlin')
     compile('org.springframework.cloud:spring-cloud-starter-sleuth')
     compile("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+    compile("org.jetbrains.kotlin:kotlin-reflect")
     //Useless dependencies but something going wrong with them
-//    compile("org.springframework.boot:spring-boot-autoconfigure")
-//    compile("io.projectreactor.kafka:reactor-kafka:1.0.0.RELEASE")
-//    compile("org.springframework.boot:spring-boot-starter-cache")
-//    compile("org.springframework.boot:spring-boot-starter-data-redis-reactive")
-//    compile("org.springframework.boot:spring-boot-starter-actuator")
-//    compile("org.springframework.kafka:spring-kafka")
-//    compile("org.jetbrains.kotlin:kotlin-reflect")
-//    compile("org.springframework.boot:spring-boot-starter-webflux")
-//    compile("org.springframework.boot:spring-boot-starter-security")
-//    compile("org.springframework.security:spring-security-oauth2-jose")
+    compile("org.springframework.boot:spring-boot-starter-actuator")
+    //Remove actuator dependency and it should work
     testCompile('org.springframework.boot:spring-boot-starter-test')
     testCompile('io.projectreactor:reactor-test')
 }
